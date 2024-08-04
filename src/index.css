@@ -1,13 +1,72 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: "Vazirmatn";
+    font-style: normal;
+    font-weight: normal;
+    src: url(./assets/fonts/Vazirmatn-Regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "Vazirmatn";
+    font-style: normal;
+    font-weight: bold;
+    src: url(./assets/fonts/Vazirmatn-Bold.woff2) format("woff2");
+  }
+}
+@layer utilities {
+  .rtl {
+    direction: rtl;
+  }
+  .swiperSlide {
+    direction: rtl;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    border-radius: 18px;
+    /* font-size: 22px; */
+    color: #0a5273;
+    padding: 0 39px;
+    
+    background-image: linear-gradient(rgb(246, 253, 255), #f6fdfe, #d3e2ff);
+  }
+  .parent {
+    @apply flex flex-col md:flex-row justify-center items-center my-12 mx-auto  w-[85%] gap-7 lg:gap-[100px];
+  }
+  .imgContainer{
+    @apply lg:w-[270px] w-[170px] md:max-w-[200px]
+  }
+  .mySwiper {
+    @apply  md:w-[460px] w-[280px] py-10 px-6 h-fit box-border;
+  }
+  .swiperSlide {
+    @apply  font-["Vazirmatn"];
+  }
+  .info {
+    @apply box-border text-lg  py-4;
+  }
+  .info p {
+    @apply text-sm  mt-3;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #0a5273;
+  font-size: 15px !important;
+  font-weight: bold !important;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
